@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RealStateRequest;
 use App\Models\RealState;
-use Illuminate\Http\Request;
 
 class RealStateController extends Controller
 {
@@ -21,9 +22,58 @@ class RealStateController extends Controller
         return response()->json($realState, 200);
     }
 
-    public function store(Request $request)
+    public function show($id)
     {
-        return response()->json($request->all(), 200);
+        try {
+            $realSate = $this->realState->findOrFail($id);
+
+            return response()->json(['data' => $realSate], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function store(RealStateRequest $request)
+    {
+        $data = $request->all();
+
+        try {
+            $realSate = $this->realState->create($data);
+
+            return response()->json(['data' => ['msg' => 'Imóvel cadastrado com sucesso!']], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function update($id, RealStateRequest $request)
+    {
+        $data = $request->all();
+
+        try {
+            $realSate = $this->realState->findOrFail($id);
+            $realSate->update($data);
+
+            return response()->json(['data' => ['msg' => 'Imóvel atualizado com sucesso!']], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $realSate = $this->realState->findOrFail($id);
+            $realSate->delete();
+
+            return response()->json(['data' => ['msg' => 'Imóvel apagado com sucesso!']], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 
 }

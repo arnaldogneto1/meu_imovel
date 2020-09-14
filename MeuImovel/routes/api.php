@@ -11,6 +11,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('v1')->namespace('Api')->group(function() {
     Route::prefix('real_states')->group(function() {
         Route::get('/', [RealStateController::class, 'index']);
+        Route::get('/{id}', [RealStateController::class, 'show']);
         Route::post('/', [RealStateController::class, 'store']);
+        Route::put('/{id}', [RealStateController::class, 'update']);
+        Route::patch('/{id}', [RealStateController::class, 'update']);
+        Route::delete('/{id}', [RealStateController::class, 'destroy']);
     });
 });
