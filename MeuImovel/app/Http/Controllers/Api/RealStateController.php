@@ -22,18 +22,6 @@ class RealStateController extends Controller
         return response()->json($realState, 200);
     }
 
-    public function show($id)
-    {
-        try {
-            $realSate = $this->realState->findOrFail($id);
-
-            return response()->json(['data' => $realSate], 200);
-        } catch (\Exception $e) {
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
-        }
-    }
-
     public function store(RealStateRequest $request)
     {
         $data = $request->all();
@@ -42,6 +30,18 @@ class RealStateController extends Controller
             $realSate = $this->realState->create($data);
 
             return response()->json(['data' => ['msg' => 'Imóvel cadastrado com sucesso!']], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function show($id)
+    {
+        try {
+            $realSate = $this->realState->findOrFail($id);
+
+            return response()->json(['data' => $realSate], 200);
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
             return response()->json($message->getMessage(), 401);
@@ -69,11 +69,10 @@ class RealStateController extends Controller
             $realSate = $this->realState->findOrFail($id);
             $realSate->delete();
 
-            return response()->json(['data' => ['msg' => 'Imóvel apagado com sucesso!']], 200);
+            return response()->json(['data' => ['msg' => 'Imóvel removido com sucesso!']], 200);
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
             return response()->json($message->getMessage(), 401);
         }
     }
-
 }

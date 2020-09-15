@@ -4,7 +4,6 @@
     <list default="true" id="98169a33-591f-46a4-8f29-ea5d415a5ce9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/RealStateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/RealStateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RealState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RealState.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -177,6 +176,7 @@
       <workItem from="1599760238540" duration="2688000" />
       <workItem from="1599854517325" duration="6446000" />
       <workItem from="1600104723499" duration="4831000" />
+      <workItem from="1600199727232" duration="7074000" />
     </task>
     <servers />
   </component>
