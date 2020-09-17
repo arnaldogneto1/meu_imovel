@@ -29,6 +29,11 @@ class RealStateController extends Controller
         try {
             $realSate = $this->realState->create($data);
 
+            if (isset($data['categories']) && count($data['categories']))
+            {
+                $realSate->categories()->sync($data['categories']);
+            }
+
             return response()->json(['data' => ['msg' => 'Imóvel cadastrado com sucesso!']], 200);
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
@@ -55,6 +60,11 @@ class RealStateController extends Controller
         try {
             $realSate = $this->realState->findOrFail($id);
             $realSate->update($data);
+
+            if (isset($data['categories']) && count($data['categories']))
+            {
+                $realSate->categories()->sync($data['categories']);
+            }
 
             return response()->json(['data' => ['msg' => 'Imóvel atualizado com sucesso!']], 200);
         } catch (\Exception $e) {
