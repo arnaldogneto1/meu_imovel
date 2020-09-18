@@ -13,9 +13,8 @@ class CreateTableUserProfile extends Migration
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
-            $table->id();
-
+        Schema::create('user_profile', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
 
             $table->text('about')->nullable(true);
@@ -26,7 +25,6 @@ class CreateTableUserProfile extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-
         });
     }
 

@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="98169a33-591f-46a4-8f29-ea5d415a5ce9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/RealStateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/RealStateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RealState.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RealState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_10_175736_create_real_state_photos.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_10_175736_create_real_state_photos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_10_175804_create_table_user_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_10_175804_create_table_user_profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -182,6 +181,7 @@
       <workItem from="1600104723499" duration="4831000" />
       <workItem from="1600199727232" duration="7389000" />
       <workItem from="1600368104113" duration="4231000" />
+      <workItem from="1600455437358" duration="4804000" />
     </task>
     <servers />
   </component>

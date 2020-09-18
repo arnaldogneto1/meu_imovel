@@ -15,7 +15,6 @@ class CreateRealStatePhotos extends Migration
     {
         Schema::create('real_state_photos', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('real_state_id');
 
             $table->string('photo');
@@ -24,7 +23,6 @@ class CreateRealStatePhotos extends Migration
             $table->timestamps();
 
             $table->foreign('real_state_id')->references('id')->on('real_state');
-
         });
     }
 
