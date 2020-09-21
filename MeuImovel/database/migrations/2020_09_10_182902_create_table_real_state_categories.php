@@ -18,8 +18,8 @@ class CreateTableRealStateCategories extends Migration
             $table->unsignedBigInteger('real_state_id');
             $table->unsignedBigInteger('category_id');
 
-            $table->foreign('real_state_id')->references('id')->on('real_state');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('real_state_id')->references('id')->on('real_state')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
         });
     }

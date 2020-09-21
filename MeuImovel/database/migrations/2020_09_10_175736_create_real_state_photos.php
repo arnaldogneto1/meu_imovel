@@ -22,7 +22,7 @@ class CreateRealStatePhotos extends Migration
 
             $table->timestamps();
 
-            $table->foreign('real_state_id')->references('id')->on('real_state');
+            $table->foreign('real_state_id')->references('id')->on('real_state')->onDelete('cascade');
         });
     }
 
