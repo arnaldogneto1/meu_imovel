@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\RealStateController;
+use App\Http\Controllers\Api\RealStatePhotoController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CategoryController;
 use Illuminate\Http\Request;
@@ -39,4 +40,8 @@ Route::prefix('v1')->namespace('Api')->group( function() {
         Route::delete('{id}', [CategoryController::class, 'destroy']);
     });
 
+    Route::prefix('photos')->group(function() {
+        Route::put('set-thumb/{photoId}/{realStateId}', [RealStatePhotoController::class, 'setThumb']);
+        Route::delete('{id}', [RealStatePhotoController::class, 'remove']);
+    });
 });
