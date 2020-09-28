@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = $this->category->paginate('10');
+        $category = $this->category->paginate(10);
         return response()->json($category, 200);
     }
 
@@ -100,7 +100,7 @@ class CategoryController extends Controller
             $category = $this->category->findOrFail($id);
             $category->delete();
 
-            return response()->json(['data' => ['msg' => 'Categoria removida com sucesso!']], 200);
+            return response()->json(['data' => ['msg' => 'Categoria removida com sucesso!']], 200);return response()->json(['data' => ['msg' => 'Categoria removida com sucesso!']], 200);
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
             return response()->json($message->getMessage(), 401);

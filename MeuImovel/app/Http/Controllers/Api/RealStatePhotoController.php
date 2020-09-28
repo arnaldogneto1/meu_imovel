@@ -43,7 +43,7 @@ class RealStatePhotoController extends Controller
             $photo = $this->realStatePhoto->find($photoId);
 
             if ($photo->is_thumb) {
-                $message = new ApiMessages('Não é possível remover uma foto que está sendo usada de Thumbnail! Escolha outra foto para Thumbnail e remova a foto desejada!');
+                $message = new ApiMessages('Não é possível remover uma foto que está sendo usada de Thumbnail! Escolha outra foto para Thumbnail e então remova a foto desejada!');
                 return response()->json($message->getMessage(), 401);
             }
 
